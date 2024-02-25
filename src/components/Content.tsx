@@ -14,13 +14,13 @@ export function Content() {
           <label>2 of 5</label>
         </div>
       </header>
-      <body>
+      <div>
         <Task />
         <Task />
         <Task />
         <Task />
         <Task />
-      </body>
+      </div>
     </div>
   )
 }
