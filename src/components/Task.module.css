@@ -8,7 +8,12 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
+}
 
+.task:hover {
+  background: var(--gray-400);
+  transform: scale(1.01);
+  transition: transform 0.1s;
 }
 
 .task:first {
@@ -54,7 +59,7 @@
 
 .task span {
   flex: 1;
-  max-width: calc(100% - 6rem);
+  width: calc(100% - 6rem);
   margin: 0 1rem;
   color: var(--gray-100);
   overflow-wrap: break-word;

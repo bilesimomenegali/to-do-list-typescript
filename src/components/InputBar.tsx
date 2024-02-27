@@ -11,15 +11,20 @@ interface InputBarProps {
 
 export function InputBar ( { handleTaskInputArea, handleTaskAddition, value }: InputBarProps  ){ 
 
+
   return (
     <div className={styles.wrapper}>
       <input 
         className={styles.input} 
         placeholder='Add a new task' 
-        onChange={handleTaskInputArea} 
+        onChange={handleTaskInputArea}
         value={value}
       />
-      <button className={styles.button} onClick={handleTaskAddition}>
+      <button 
+        className={styles.button}
+        onClick={handleTaskAddition}
+        disabled={value === ''}
+      >
         Add
         <img src={plusIcon}/>
       </button>

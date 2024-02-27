@@ -36,6 +36,8 @@
 
 .button:hover {
   background: var(--blue);
+  transform: scale(1.03);
+  transition: transform 0.1s;
 }
 
 .button:focus {
@@ -45,6 +47,18 @@
 
 .button:active {
   transform: scale(0.95);
+  transition: transform 0.4s;
+}
+
+.button:disabled {
+  background: var(--gray-500);
+  color: var(--gray-300);
+  cursor: not-allowed;
+}
+
+.button:disabled:hover {
+  background: var(--gray-500);
+  color: var(--gray-300);
 }
 
 @media (max-width: 866px) {
@@ -69,6 +83,7 @@
 
   .button:active {
     transform: scale(0.98);
-    background: var(--blue)
+    background: var(--blue);
+    transition: transform 0.4s;
   }
 }

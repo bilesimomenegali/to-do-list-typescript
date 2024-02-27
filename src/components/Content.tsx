@@ -5,13 +5,15 @@ import { TaskType } from '../App';
 interface ContentProps {
   taskList: TaskType[];
   handleTaskDeletion: (id: number) => void;
+  handleTaskCompletion: (id: number) => void;
 }
 
-export function Content({ taskList, handleTaskDeletion }: ContentProps) {
 
+export function Content({ taskList, handleTaskDeletion, handleTaskCompletion }: ContentProps) {
+  
   const createdTasks = taskList.length;
   const completedTasks = taskList.filter(task => task.isChecked).length;
-
+  
   return (
     <div className={styles.wrapper}>
       <header className={styles.header}>
@@ -34,6 +36,7 @@ export function Content({ taskList, handleTaskDeletion }: ContentProps) {
             task={item.task} 
             isChecked={item.isChecked} 
             handleTaskDeletion={handleTaskDeletion}
+            handleTaskCompletion={handleTaskCompletion}
           />
         })}
       </div>

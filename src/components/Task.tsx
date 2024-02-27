@@ -6,17 +6,22 @@ interface TaskType {
   task: string;
   isChecked: boolean;
   handleTaskDeletion: (id: number) => void;
+  handleTaskCompletion: (id: number) => void;
 
 }
 
-export function Task({ id, task, handleTaskDeletion }: TaskType) {
+export function Task({ id, task, isChecked, handleTaskDeletion, handleTaskCompletion }: TaskType) {
   return (
     <div className={styles.task}>
-      <input type="checkbox" />
-      <span>{id}{task}</span>
-      <button className={styles.delete} onClick={() => {handleTaskDeletion(id)}}>
-        <TrashSimple />
-      </button>
+      <div  onClick={() => handleTaskCompletion(id)}>
+        <input type="checkbox" checked={isChecked} />
+        <span>{task}</span>
+      </div>
+      <div onClick={() => {handleTaskDeletion(id)}}>
+        <button className={styles.delete} >
+          <TrashSimple />
+        </button> 
+      </div>
     </div>
   )
 }
